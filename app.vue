@@ -31,7 +31,7 @@
   place-items: center;
 }
 .logo {
-  width: 90%;
+  width: 70%;
 }
 path {
   fill: #42AFE3;
