@@ -1,3 +1,8 @@
+<script setup lang="ts">
+  const cmap = ref({c1:"#01FF6B", c2:"#FF00D0"})
+  //const cmap = ref({c1:"#77f277", c2:"#7759bb"})
+</script>
+
 <template>
   <div id="parent">
   <div>
@@ -6,8 +11,7 @@
       <defs>
         <linearGradient id="g1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45)">
           <stop offset="0.5" stop-color="#00000000" stop-opacity="1"/>
-          <!--stop offset="0.5" stop-color="#55D055" stop-opacity="1"/-->
-          <stop offset="0.5" stop-color="#01FF6B" stop-opacity="1"/>
+          <stop offset="0.5" :stop-color=cmap.c1 stop-opacity="1"/>
         </linearGradient>
       </defs>
       <path class="st0" d="M10.6,80.5c0-9.3,0.1-18.7,0-28c0-1.9,0.6-2.4,2.4-2.4c10.7,0.1,21.3,0.1,32,0c1.6,0,2.1,0.4,2.1,2.1  c0,1.7-0.4,2.3-2.2,2.3c-9.1-0.1-18.2,0-27.2-0.1c-1.5,0-2.1,0.3-2.1,2c0.1,6.1,0.1,12.2,0,18.2c0,1.7,0.5,2.1,2.1,2  c7.3-0.1,14.7,0,22-0.1c1.8,0,2.5,0.4,2.5,2.3c0,2-0.9,2.1-2.4,2.1C32.4,81,25.2,81.2,17.9,81c-2.1,0-2.4,0.6-2.4,2.5  c0.1,7.1,0.1,14.2,0,21.2c0,2,0.5,2.5,2.5,2.5c9.2-0.1,18.5,0,27.7-0.1c1.6,0,2.4,0.1,2.4,2.1c0,1.9-0.9,1.9-2.3,1.9  c-10.9,0-21.8-0.1-32.7,0c-1.9,0-2.5-0.5-2.5-2.5C10.7,99.3,10.6,89.9,10.6,80.5z"/>
@@ -32,7 +36,7 @@
       <defs>
         <linearGradient id="g2" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45)">
           <!--stop offset="0.5" stop-color="#553799" stop-opacity="1"/-->
-          <stop offset="0.5" stop-color="#FF00D0" stop-opacity="1"/>
+          <stop offset="0.5" :stop-color=cmap.c2 stop-opacity="1"/>
           <stop offset="0.5" stop-color="#00000000" stop-opacity="1"/>
         </linearGradient>
       </defs>
@@ -59,8 +63,10 @@
 
 <style scoped>
 #parent {
+  background: #000;
   height:200px;
   padding-left: calc((100% - 340px)/2);
+
 }
 #parent > div {
   position: relative;
@@ -80,12 +86,14 @@
   /*margin-top: 25%;*/
   padding: 2%;
   fill: url(#g1);
+  filter: drop-shadow(0px 0px 4px v-bind(cmap.c1));
 }
 #part2 > svg {
   height: 90%;
   /*margin-top: 25%;*/
   padding: 2%;
   fill: url(#g2);
+  filter: drop-shadow(0px 0px 5px v-bind(cmap.c2));
 }
 #part1 {
   animation: anim 4s;
