@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <svg viewBox="0 0 200.5 112.4">
-    <use xlink:href="~/assets/evo-logo.svg#evologo1"/>   
+    <svg viewBox="0 0 2152.07 1291.96">
+    <use xlink:href="~/assets/evo-logo-just.svg#evologo2"/>   
     </svg>
   </div>
 </template>
@@ -20,10 +20,12 @@
 }
 svg {
   fill: #42AFE3;
-  stroke: #000;
-  stroke-width: 1;
-  stroke-dasharray: 40;
-  
+  stroke: #55009977;
+  stroke-width: 25;
+  stroke-dasharray: 500;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  paint-order: stroke;
 
   animation: anim 3s;
   animation-iteration-count: infinite;
@@ -32,7 +34,7 @@ svg {
 }
 @keyframes anim {
   0% { 
-    stroke-dashoffset: 100; 
+    stroke-dashoffset: 1500; 
     fill: #ab4567;
   }
   50% { 
